@@ -1,9 +1,10 @@
-package com.example.productorderservice.order;
+package com.example.productorderservice.order.application.service;
 
-import com.example.productorderservice.product.Product;
+import com.example.productorderservice.order.entity.Order;
+import com.example.productorderservice.order.application.port.OrderPort;
+import com.example.productorderservice.product.domain.Product;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,8 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/orders")
-public
-class OrderService {
+public class OrderService {
     private final OrderPort orderPort;
 
     OrderService(OrderPort orderPort) {
